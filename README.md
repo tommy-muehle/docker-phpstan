@@ -13,35 +13,27 @@ Usage examples can be found below.
 
 * Docker
 
-## Install
-
-```
-git clone https://github.com/tommy-muehle/docker-phpstan.git
-cd docker-phpstan
-docker build . -t phpstan-image
-```
-
 ## Usage
 
 Before start, keep in mind that when you run the container the executable in this 
-is always "phpstan". So all parameters after "phpstan-image" in the commands below are given to this executable.
+is always "phpstan". So all parameters after "tommymuehle/docker-phpstan" in the commands below are given to this executable.
 
 * Basic usage
 
 ```
-docker run --rm -v /path/to/app:/app phpstan-image analyse /app/src
+docker run --rm -v /path/to/app:/app tommymuehle/docker-phpstan analyse /app/src
 ```
 
 * with multiple folders
 
 ```
-docker run --rm -v /path/to/app:/app phpstan-image analyse /app/src /app/tests
+docker run --rm -v /path/to/app:/app tommymuehle/docker-phpstan analyse /app/src /app/tests
 ```
 
 * with higher level
 
 ```
-docker run --rm -v /path/to/app:/app phpstan-image analyse /app/src --level=5
+docker run --rm -v /path/to/app:/app tommymuehle/docker-phpstan analyse /app/src --level=5
 ```
 
 * with external PHAR tools
@@ -67,5 +59,5 @@ require __DIR__ . '/vendor/autoload.php';
 The result, on one line, is this usage example:
 
 ```
-docker run --rm -v /path/to/app:/app phpstan analyse --autoload-file=phpstan-autoload.php /app/src /app/tests
+docker run --rm -v /path/to/app:/app tommymuehle/docker-phpstan analyse --autoload-file=phpstan-autoload.php /app/src /app/tests
 ```
