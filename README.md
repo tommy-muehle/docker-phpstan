@@ -41,7 +41,7 @@ docker run --rm -v /path/to/app:/app phpstan-image analyse /app/src /app/tests
 * with higher level
 
 ```
-docker run --rm --entrypoint phpstan -v /path/to/app:/app phpstan-image analyse /app/src --level=5
+docker run --rm -v /path/to/app:/app phpstan-image analyse /app/src --level=5
 ```
 
 * with external PHAR tools
