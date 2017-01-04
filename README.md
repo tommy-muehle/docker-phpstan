@@ -1,10 +1,13 @@
 # docker-phpstan
 
 [PHPStan](https://github.com/phpstan/phpstan) is a very great tool. 
-But adding this tool as a composer requirement for my projects (personal) are no option for me. 
 
-So i created this Docker container which comes with PHP 7.1 because of prerequisities and pre-installed PHPStan. 
+But to avoid adding PHPStan as a project requirement or to check PHP 5.x applications which are not compatible with PHPStan as a 
+dependency you can use this docker container.
+
+This Docker container comes with PHP 7.1 because of prerequisities and pre-installed PHPStan. 
 To check your applications source code simple mount them into the container and have fun.
+Usage examples can be found below.
 
 ## Requirements
 
