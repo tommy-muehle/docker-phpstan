@@ -2,7 +2,6 @@ FROM php:7.1-alpine
 
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 
-# Get Composer
 ENV COMPOSER_HOME /composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
@@ -13,9 +12,7 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && php -r "unlink('/tmp/composer-setup.php');" \
   && php -r "unlink('/tmp/composer-setup.sig');"
 
-# Get needed requirements
-RUN /usr/local/bin/composer global require "hirak/prestissimo:^0.3" \
-    && /usr/local/bin/composer global require phpstan/phpstan
+RUN /usr/local/bin/composer global require phpstan/phpstan dev-master --prefer-dist
 
 ENV PATH /composer/vendor/bin:$PATH
 
